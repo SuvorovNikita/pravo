@@ -1,0 +1,124 @@
+@use 'mixins';
+@use 'variables';
+
+:root {
+  --primary-color: #4f8ff0;
+  --header-top-color: #010101;
+  --font-nunito-sans: sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: var(--white);
+  font-family: var(--font-nunito-sans);
+}
+
+a {
+  text-decoration: none;
+  @include mixins.m-state-clickable;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  user-select: none;
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1320px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.row {
+  display: grid;
+  grid-gap: 16px;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include mixins.m-media-up(lg) {
+    grid-gap: 32px;
+  }
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span #{$i};
+  }
+
+  @each $key, $value in variables.$grid-breakpoints {
+    .col-#{$key}-#{$i} {
+      grid-column: span 12;
+
+      @include mixins.m-media-up($key) {
+        grid-column: span #{$i};
+      }
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-md-block {
+  display: none;
+
+  @include mixins.m-media-up(md) {
+    display: block;
+  }
+}
+
+.d-md-none {
+  @include mixins.m-media-up(md) {
+    display: none;
+  }
+}
+
+.d-lg-block {
+  display: none;
+
+  @include mixins.m-media-up(lg) {
+    display: block;
+  }
+}
+
+.d-lg-none {
+  @include mixins.m-media-up(lg) {
+    display: none;
+  }
+}
+
+.d-xl-block {
+  display: none;
+
+  @include mixins.m-media-up(xl) {
+    display: block;
+  }
+}
+
+.d-xl-none {
+  @include mixins.m-media-up(xl) {
+    display: none;
+  }
+}
+
+@import 'components';

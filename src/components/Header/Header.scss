@@ -1,0 +1,136 @@
+@use '../../styles/mixins.scss';
+
+.header {
+  &__inner {
+    background-color: var(--header-top-color);
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 17px 0;
+  }
+
+  &__icon {
+    display: flex;
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__link {
+    font-family: var(--font-nunito-sans);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.2;
+    color: white;
+  }
+
+  &__order {
+    font-family: var(--font-nunito-sans);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+
+    @include mixins.m-media-up(md) {
+      line-height: 1.5;
+    }
+
+    &-call {
+      color: var(--primary-color);
+    }
+  }
+
+  &__mail {
+    display: none;
+
+    @include mixins.m-media-up(md) {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__bottom {
+    padding: 18px 0;
+    background: rgba(1, 1, 1, 0.76);
+
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.menu-mobile {
+  display: block;
+  position: relative;
+  z-index: 100;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+
+    &--open svg {
+      background-color: #4f8ff0;
+    }
+  }
+
+  &__list {
+    position: fixed;
+    top: 137px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #010101;
+    display: none;
+    z-index: 999;
+
+    &--open {
+      padding-top: 24px;
+      display: block;
+    }
+  }
+
+  &__item {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    color: white;
+    padding: 0 0 0 26px;
+    transition: color 0.3s ease;
+
+    &--active {
+      color: var(--primary-color);
+    }
+
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+
+  @include mixins.m-media-up(lg) {
+    display: none;
+  }
+}

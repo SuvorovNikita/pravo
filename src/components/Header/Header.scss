@@ -28,6 +28,11 @@
     font-size: 14px;
     line-height: 1.2;
     color: white;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 
   &__order {
@@ -35,6 +40,11 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 1.2;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--primary-color);
+    }
 
     @include mixins.m-media-up(md) {
       line-height: 1.5;
@@ -95,12 +105,15 @@
     width: 100%;
     height: 100%;
     background-color: #010101;
-    display: none;
+    visibility: hidden;
     z-index: 999;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
 
     &--open {
       padding-top: 24px;
-      display: block;
+      visibility: visible;
+      transform: translateX(0);
     }
   }
 

@@ -8,7 +8,6 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-between;
     padding: 17px 0;
   }
 
@@ -20,6 +19,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-right: auto;
+
+    @include mixins.m-media-up(md) {
+      margin-right: 28px;
+    }
   }
 
   &__link {
@@ -62,6 +66,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      margin-right: auto;
     }
   }
 
@@ -73,6 +78,50 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+    }
+  }
+
+  &__logo {
+    margin-right: auto;
+
+    @include mixins.m-media-up(lg) {
+      width: 312px;
+      height: 62px;
+    }
+  }
+
+  &__menu {
+    display: none;
+
+    @include mixins.m-media-up(lg) {
+      display: flex;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-item {
+      margin-right: 32px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &-link {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.2;
+      color: white;
+      transition: color 0.3s ease;
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--primary-color);
+      }
     }
   }
 }
@@ -94,7 +143,7 @@
     user-select: none;
 
     &--open svg {
-      background-color: #4f8ff0;
+      background-color: var(--primary-color);
     }
   }
 
@@ -104,7 +153,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #010101;
+    background-color: var(--header-top-color);
     visibility: hidden;
     z-index: 999;
     transform: translateX(-100%);

@@ -81,7 +81,18 @@ const Header = () => {
       <div className="header__bottom">
         <div className="container">
           <div className="header__bottom-inner">
-            <Image className="header__logo" src={logo} alt="Логотип" />
+            <Image className="header__logo" src={logo} alt="Логотип" priority />
+            <nav className="header__menu">
+              <ul className="header__menu-list">
+                {menuItems.map((item, index) => (
+                  <li className="header__menu-item" key={index}>
+                    <Link className="header__menu-link" href={item.href}>
+                      {item.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
             <nav className="menu-mobile">
               <button
                 className={`menu-mobile__button ${isOpen ? 'menu-mobile__button--open' : ''}`}

@@ -4,7 +4,13 @@
 :root {
   --primary-color: #4f8ff0;
   --header-top-color: #010101;
+  --footer-color: #222;
+  --grey-color: #8c8c8c;
   --font-nunito-sans: sans-serif;
+}
+
+.main {
+  height: 100vh;
 }
 
 html,
@@ -25,7 +31,8 @@ p {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   margin: 0;
 }
 

@@ -1,0 +1,92 @@
+@use '../../styles/mixins.scss';
+
+.footer {
+  background-color: var(--footer-color);
+  padding: 40px 0;
+
+  &__logo {
+    display: block;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--grey-color);
+    padding-bottom: 40px;
+  }
+
+  &__contact {
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: #2c2c2c;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--grey-color);
+  }
+
+  &__adress {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+  }
+
+  &__person-answer {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  &__employee-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  &__paragraph {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.2;
+    color: white;
+  }
+
+  &__text {
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+    margin-bottom: 24px;
+  }
+}

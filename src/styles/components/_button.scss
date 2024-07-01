@@ -1,0 +1,22 @@
+@use '../mixins.scss';
+
+.button {
+  @include mixins.flex-center(true);
+  @include mixins.reset-button;
+  height: var(--button-height);
+  padding-inline: 24px;
+  font-size: 14px;
+  color: white;
+  background-color: var(--primary-color);
+  border: var(--border-button);
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-button);
+    color: var(--footer-color);
+  }
+}

@@ -12,7 +12,15 @@ const Footer = () => {
           <div className="footer__logo">
             <Image src={logo} alt="логотип футера" />
           </div>
+          <div className="footer__paragraph">
+            <p>
+              Предварительные выводы неутешительны: синтетическое тестирование, а также свежий
+              взгляд на привычные вещи — безусловно открывает новые горизонты для экономической
+              целесообразности принимаемых решений.
+            </p>
+          </div>
         </div>
+
         <div className="footer__body">
           <div className="footer__contact">
             <div className="footer__item">
@@ -80,33 +88,65 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="footer__ask-question">
-            <div className="footer__person-answer">
-              <div className="footer__avatar">
-                <Image src={ava} alt="Аватар" />
-              </div>
+          <ul className="footer__menu-list">
+            <li className="footer__menu-item">
+              <Link href="#" className="footer__menu-link">
+                Услуги
+              </Link>
+            </li>
+            <li className="footer__menu-item">
+              <Link href="#" className="footer__menu-link">
+                О компании
+              </Link>
+            </li>
+            <li className="footer__menu-item">
+              <Link href="#" className="footer__menu-link">
+                Сертификаты
+              </Link>
+            </li>
+            <li className="footer__menu-item">
+              <Link href="#" className="footer__menu-link">
+                отзывы
+              </Link>
+            </li>
+            <li className="footer__menu-item">
+              <Link href="#" className="footer__menu-link">
+                Полезные материалы
+              </Link>
+            </li>
+            <li className="footer__menu-item">
+              <Link href="#" className="footer__menu-link">
+                Благотворительность
+              </Link>
+            </li>
+          </ul>
+
+          <div className="footer__person-answer">
+            <div className="footer__avatar">
+              <Image src={ava} alt="Аватар" />
               <div className="footer__employee-info">
                 <h3 className="footer__name">Миронов Александр</h3>
-                <p className="footer__paragraph">Ведущий юрист</p>
+                <p className="footer__paragraph-alt">Ведущий юрист</p>
               </div>
             </div>
-          </div>
-          <div className="footer__text">
-            <p>
-              Есть над чем задуматься: тщательные исследования конкурентов разоблачены. Идейные
-              соображения высшего порядка, а также перспективное планирование играет
-            </p>
+            <div className="footer__text">
+              <p>
+                Есть над чем задуматься: тщательные исследования конкурентов разоблачены. Идейные
+                соображения высшего порядка, а также перспективное планирование играет
+              </p>
+            </div>
+            <button className="footer__button button" type="button">
+              Задать вопрос юристу
+            </button>
           </div>
         </div>
-
-        <button className="footer__button button" type="button">
-          Задать вопрос юристу
-        </button>
       </div>
       <div className="footer__bottom">
         <div className="container">
-          <p>Все права защищены, 2024</p>
-          <p>Политика обработки персональных данных</p>
+          <div className="footer__bottom-text">
+            <p>Все права защищены, 2024</p>
+            <p>Политика обработки персональных данных</p>
+          </div>
         </div>
       </div>
     </footer>
